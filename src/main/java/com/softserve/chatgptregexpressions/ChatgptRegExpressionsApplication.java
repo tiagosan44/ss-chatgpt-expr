@@ -3,6 +3,9 @@ package com.softserve.chatgptregexpressions;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 @SpringBootApplication
 public class ChatgptRegExpressionsApplication {
 
@@ -40,7 +43,7 @@ public class ChatgptRegExpressionsApplication {
 	 */
 	public static boolean validateString(String str, int maxLength) {
 		String regex = String.format(
-			"^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[!\"#$%%&'()*+,-./:;<=>?@[\\]^_`{|}~])[\\S]{1,%d}$",
+			"^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[!\"#$%%&'()*+,-./:;<=>?@\\[\\]^_`{|}~])\\S{1,%d}$",
 			maxLength
 		);
 
